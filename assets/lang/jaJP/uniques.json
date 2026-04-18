@@ -1,0 +1,797 @@
+{
+    "100000_steps": {
+        "num_inherents": 1,
+        "name": "100,000歩"
+    },
+    "ahavarion_spear_of_lycander": {
+        "num_inherents": 1,
+        "name": "ライカンダーの槍、アハヴァリオン"
+    },
+    "airidahs_inexorable_will": {
+        "num_inherents": 0,
+        "name": "エイリダの容赦なき意志"
+    },
+    "ancients_oath": {
+        "num_inherents": 1,
+        "name": "古の誓い"
+    },
+    "andariels_visage": {
+        "num_inherents": 1,
+        "name": "アンダリエルの面"
+    },
+    "arcadia": {
+        "num_inherents": 0,
+        "name": "アルカディア"
+    },
+    "argent_veil": {
+        "num_inherents": 0,
+        "name": "銀白のヴェール"
+    },
+    "arreats_bearing": {
+        "num_inherents": 0,
+        "name": "アリートの足並み"
+    },
+    "ashearas_khanjar": {
+        "num_inherents": 1,
+        "name": "アシェアラのカンジャル"
+    },
+    "assassins_stride": {
+        "num_inherents": 1,
+        "name": "アサシンの歩み"
+    },
+    "axial_conduit": {
+        "num_inherents": 0,
+        "name": "軸の導管"
+    },
+    "azurewrath": {
+        "num_inherents": 1,
+        "name": "アズールラス"
+    },
+    "balazans_maxtlatl": {
+        "num_inherents": 0,
+        "name": "バラザンの腰布"
+    },
+    "band_of_first_breath": {
+        "num_inherents": 0,
+        "name": "呼吸始めたる者の指輪"
+    },
+    "bands_of_ichorous_rose": {
+        "num_inherents": 1,
+        "name": "膿漿の薔薇の帯"
+    },
+    "bane_of_ahjad-den": {
+        "num_inherents": 0
+    },
+    "banished_lords_talisman": {
+        "num_inherents": 0,
+        "name": "追放された領主のタリスマン"
+    },
+    "bastion_of_sir_matthias": {
+        "num_inherents": 3,
+        "name": "マティアス卿の要塞"
+    },
+    "battle_trance": {
+        "num_inherents": 1,
+        "name": "バトル・トランス"
+    },
+    "beastfall_boots": {
+        "num_inherents": 1,
+        "name": "獣殺しのブーツ"
+    },
+    "black_river": {
+        "num_inherents": 1,
+        "name": "ブラック・リバー"
+    },
+    "blood-mad_idol": {
+        "num_inherents": 0,
+        "name": "血狂いの偶像"
+    },
+    "blood_artisans_cuirass": {
+        "num_inherents": 0,
+        "name": "血職人の胸当て"
+    },
+    "blood_moon_breeches": {
+        "num_inherents": 0,
+        "name": "鮮血の月のズボン"
+    },
+    "bloodless_scream": {
+        "num_inherents": 1,
+        "name": "血なき叫び"
+    },
+    "blue_rose": {
+        "num_inherents": 0,
+        "name": "青い薔薇"
+    },
+    "cathedrals_song": {
+        "num_inherents": 3,
+        "name": "大聖堂の歌"
+    },
+    "chainscourged_mail": {
+        "num_inherents": 0,
+        "name": "鎖罰の甲冑"
+    },
+    "cluckeye": {
+        "num_inherents": 1,
+        "name": "クラックアイ"
+    },
+    "cluckonomicon": {
+        "num_inherents": 0,
+        "name": "コケコケミコン"
+    },
+    "condemnation": {
+        "num_inherents": 1,
+        "name": "断罪"
+    },
+    "coop_de_grâce": {
+        "num_inherents": 1,
+        "name": "慈悲正肉"
+    },
+    "cowl_of_the_nameless": {
+        "num_inherents": 0,
+        "name": "名もなき者の頭巾"
+    },
+    "craze_of_the_dead_god": {
+        "num_inherents": 0,
+        "name": "死した神の狂気"
+    },
+    "crown_of_lucion": {
+        "num_inherents": 0,
+        "name": "ルシオンの王冠"
+    },
+    "cruors_embrace": {
+        "num_inherents": 0,
+        "name": "クルオールの抱擁"
+    },
+    "dawnfire": {
+        "num_inherents": 0,
+        "name": "暁の炎"
+    },
+    "deathless_visage": {
+        "num_inherents": 0,
+        "name": "死なき相貌の兜"
+    },
+    "deathmask_of_nirmitruq": {
+        "num_inherents": 0,
+        "name": "ニルミトルクのデスマスク"
+    },
+    "deaths_pavane": {
+        "num_inherents": 1,
+        "name": "死の舞踏"
+    },
+    "deathspeakers_pendant": {
+        "num_inherents": 0,
+        "name": "死弁者のペンダント"
+    },
+    "dolmen_stone": {
+        "num_inherents": 0,
+        "name": "支石墓の石"
+    },
+    "doombringer": {
+        "num_inherents": 1,
+        "name": "ドゥームブリンガー"
+    },
+    "eaglehorn": {
+        "num_inherents": 1,
+        "name": "イーグルホーン"
+    },
+    "earthbreaker": {
+        "num_inherents": 0,
+        "name": "アースブレイカー"
+    },
+    "ebonpiercer": {
+        "num_inherents": 0,
+        "name": "黒檀の目打"
+    },
+    "eggcecutioner": {
+        "num_inherents": 1,
+        "name": "エッグゼキューショナー"
+    },
+    "eggis": {
+        "num_inherents": 3,
+        "name": "エッグス"
+    },
+    "endurant_faith": {
+        "num_inherents": 0,
+        "name": "耐え忍ぶ信念"
+    },
+    "esadoras_overflowing_cameo": {
+        "num_inherents": 0,
+        "name": "エサドラの溢れるカメオ"
+    },
+    "esus_heirloom": {
+        "num_inherents": 1,
+        "name": "エスの家宝"
+    },
+    "eyes_in_the_dark": {
+        "num_inherents": 1,
+        "name": "闇に光る瞳"
+    },
+    "fields_of_crimson": {
+        "num_inherents": 1,
+        "name": "紅の原野"
+    },
+    "fists_of_fate": {
+        "num_inherents": 0,
+        "name": "運命の拳"
+    },
+    "flamescar": {
+        "num_inherents": 2,
+        "name": "火傷"
+    },
+    "flameweaver": {
+        "num_inherents": 0,
+        "name": "フレイムウィーバー"
+    },
+    "fleshrender": {
+        "num_inherents": 1,
+        "name": "フレッシュレンダー"
+    },
+    "flickerstep": {
+        "num_inherents": 1,
+        "name": "明滅の足取り"
+    },
+    "fractured_winterglass": {
+        "num_inherents": 1,
+        "name": "冬玻璃の破片"
+    },
+    "frostburn": {
+        "num_inherents": 1,
+        "name": "フロストバーン"
+    },
+    "galvanic_azurite": {
+        "num_inherents": 0
+    },
+    "gate_of_the_red_dawn": {
+        "num_inherents": 3,
+        "name": "赤き夜明けの門"
+    },
+    "gathlens_birthright": {
+        "num_inherents": 1,
+        "name": "ガスレンの天稟"
+    },
+    "gloves_of_the_illuminator": {
+        "num_inherents": 0,
+        "name": "イルミネーターの手袋"
+    },
+    "godslayer_crown": {
+        "num_inherents": 0,
+        "name": "神殺しの王冠"
+    },
+    "gohrs_devastating_grips": {
+        "num_inherents": 0,
+        "name": "ゴールの破壊的手甲"
+    },
+    "gospel_of_the_devotee": {
+        "num_inherents": 0,
+        "name": "求道者の福音"
+    },
+    "grasp_of_shadow": {
+        "num_inherents": 1,
+        "name": "影の掌握"
+    },
+    "gravebloom": {
+        "num_inherents": 1,
+        "name": "墓花"
+    },
+    "greatstaff_of_the_crone": {
+        "num_inherents": 1,
+        "name": "朽ち果てし者の大杖"
+    },
+    "greaves_of_the_empty_tomb": {
+        "num_inherents": 2,
+        "name": "空の墓のグリーヴ"
+    },
+    "griswolds_opus": {
+        "num_inherents": 1,
+        "name": "グリズウォルドの傑作"
+    },
+    "hail_of_verglas": {
+        "num_inherents": 1,
+        "name": "雨氷の雹"
+    },
+    "harlequin_crest": {
+        "num_inherents": 0,
+        "name": "ハーレクインの紋章"
+    },
+    "harmony_of_ebewaka": {
+        "num_inherents": 0,
+        "name": "エベワカの調和"
+    },
+    "heir_of_perdition": {
+        "num_inherents": 1,
+        "name": "滅びの継承者"
+    },
+    "hellhammer": {
+        "num_inherents": 1,
+        "name": "ヘルハンマー"
+    },
+    "herald_of_zakarum": {
+        "num_inherents": 4,
+        "name": "ザカラムの使者"
+    },
+    "heralds_morningstar": {
+        "num_inherents": 1,
+        "name": "使者のモーニングスター"
+    },
+    "hesha_e_kesungi": {
+        "num_inherents": 0,
+        "name": "ヘシャ・エ・ケスンギ"
+    },
+    "hooves_of_the_mountain_god": {
+        "num_inherents": 1,
+        "name": "山神の蹄"
+    },
+    "howl_from_below": {
+        "num_inherents": 0,
+        "name": "下からの咆哮"
+    },
+    "hunters_zenith": {
+        "num_inherents": 0,
+        "name": "狩人の頂点"
+    },
+    "iceheart_brais": {
+        "num_inherents": 0,
+        "name": "氷心の下衣"
+    },
+    "indiras_memory": {
+        "num_inherents": 0,
+        "name": "インディラの記憶"
+    },
+    "insatiable_fury": {
+        "num_inherents": 0,
+        "name": "飽くなき怒気"
+    },
+    "jacinth_shell": {
+        "num_inherents": 0,
+        "name": "風信子石の甲殻"
+    },
+    "judgment_of_auriel": {
+        "num_inherents": 0,
+        "name": "アウリエルの審判"
+    },
+    "judicants_glaivehelm": {
+        "num_inherents": 0,
+        "name": "断罪者のグレイブヘルム"
+    },
+    "kessimes_legacy": {
+        "num_inherents": 0,
+        "name": "ケッシミの遺産"
+    },
+    "khamsin_steppewalkers": {
+        "num_inherents": 1,
+        "name": "カムシンの草原歩き"
+    },
+    "kilt_of_blackwing": {
+        "num_inherents": 0
+    },
+    "lidless_wall": {
+        "num_inherents": 4,
+        "name": "無蓋の防壁"
+    },
+    "lights_rebuke": {
+        "num_inherents": 1,
+        "name": "光の反撃"
+    },
+    "locrans_talisman": {
+        "num_inherents": 0,
+        "name": "ロックランのタリスマン"
+    },
+    "loyaltys_mantle": {
+        "num_inherents": 0,
+        "name": "忠誠の外套"
+    },
+    "mad_wolfs_glee": {
+        "num_inherents": 0,
+        "name": "狂狼のグリー"
+    },
+    "malefic_crescent": {
+        "num_inherents": 1,
+        "name": "悪意の三日月"
+    },
+    "mantle_of_mountains_fury": {
+        "num_inherents": 1,
+        "name": "怒れる山の外套"
+    },
+    "mantle_of_the_grey": {
+        "num_inherents": 0,
+        "name": "灰色者の外套"
+    },
+    "march_of_the_stalwart_soul": {
+        "num_inherents": 1,
+        "name": "百戦錬磨の魂の進撃"
+    },
+    "melted_heart_of_selig": {
+        "num_inherents": 0,
+        "name": "溶けたセリグの心臓"
+    },
+    "mjölnic_ryng": {
+        "num_inherents": 0,
+        "name": "雷神鎚の指輪"
+    },
+    "mothers_embrace": {
+        "num_inherents": 0,
+        "name": "母の抱擁"
+    },
+    "mutilator_plate": {
+        "num_inherents": 0,
+        "name": "切断者の鎧"
+    },
+    "nesekem_the_herald": {
+        "num_inherents": 1,
+        "name": "布告者ネセケム"
+    },
+    "okuns_catalyst": {
+        "num_inherents": 1,
+        "name": "オークンの触媒"
+    },
+    "ophidian_iris": {
+        "num_inherents": 1,
+        "name": "蛇の虹彩"
+    },
+    "orphan_maker": {
+        "num_inherents": 1,
+        "name": "孤児の創造主"
+    },
+    "orsivane": {
+        "num_inherents": 0,
+        "name": "オルシヴェイン"
+    },
+    "overkill": {
+        "num_inherents": 1,
+        "name": "オーバーキル"
+    },
+    "paingorgers_gauntlets": {
+        "num_inherents": 0,
+        "name": "ペイン・ゴージャーのガントレット"
+    },
+    "path_of_the_emissary": {
+        "num_inherents": 1,
+        "name": "密使の道"
+    },
+    "path_of_tragoul": {
+        "num_inherents": 1,
+        "name": "トラグ=オウルの道"
+    },
+    "peacemongers_signet": {
+        "num_inherents": 0,
+        "name": "平和唱道者の印章指輪"
+    },
+    "penitent_greaves": {
+        "num_inherents": 2,
+        "name": "懺悔のグリーヴ"
+    },
+    "pitfighters_gull": {
+        "num_inherents": 0,
+        "name": "闘技場の奸計"
+    },
+    "protection_of_the_prime": {
+        "num_inherents": 0,
+        "name": "原始の守護"
+    },
+    "rage_of_harrogath": {
+        "num_inherents": 0,
+        "name": "ハロガスの激高"
+    },
+    "raiment_of_the_infinite": {
+        "num_inherents": 0,
+        "name": "永遠の装具"
+    },
+    "rakanoths_wake": {
+        "num_inherents": 1,
+        "name": "ラカノスの足跡"
+    },
+    "ramaladnis_magnum_opus": {
+        "num_inherents": 1,
+        "name": "ラマラドニの最高傑作"
+    },
+    "razorplate": {
+        "num_inherents": 0,
+        "name": "レイザープレート"
+    },
+    "red_sermon": {
+        "num_inherents": 1,
+        "name": "赤の説教"
+    },
+    "ring_of_mendeln": {
+        "num_inherents": 0,
+        "name": "メンデルンの指輪"
+    },
+    "ring_of_red_furor": {
+        "num_inherents": 0,
+        "name": "赤き怒りの指輪"
+    },
+    "ring_of_starless_skies": {
+        "num_inherents": 2,
+        "name": "星無き空の指輪"
+    },
+    "ring_of_the_midday_hunt": {
+        "num_inherents": 0,
+        "name": "真昼の狩りの指輪"
+    },
+    "ring_of_the_midnight_sun": {
+        "num_inherents": 0,
+        "name": "真夜中の太陽の指輪"
+    },
+    "ring_of_the_ravenous": {
+        "num_inherents": 0,
+        "name": "貪欲の指輪"
+    },
+    "ring_of_the_sacrilegious_soul": {
+        "num_inherents": 0,
+        "name": "涜れし魂の指輪"
+    },
+    "ring_of_writhing_moon": {
+        "num_inherents": 0,
+        "name": "もがける月の指輪"
+    },
+    "rod_of_kepeleke": {
+        "num_inherents": 1,
+        "name": "ケペレキの杖"
+    },
+    "rotting_lightbringer": {
+        "num_inherents": 1,
+        "name": "朽ちゆくライトブリンガー"
+    },
+    "rustbitten_dirk": {
+        "num_inherents": 1,
+        "name": "錆食いの短剣"
+    },
+    "saboteurs_signet": {
+        "num_inherents": 0,
+        "name": "破壊工作員の印章指輪"
+    },
+    "sabre_of_tsasgal": {
+        "num_inherents": 1,
+        "name": "ツァスガルのサーベル"
+    },
+    "sanctis_of_kethamar": {
+        "num_inherents": 0,
+        "name": "ケサマールのサンクティス"
+    },
+    "sanguivor_blade_of_zir": {
+        "num_inherents": 1,
+        "name": "ジアの剣サングウィヴァー"
+    },
+    "scorn_of_the_earth": {
+        "num_inherents": 2,
+        "name": "土への嘲弄"
+    },
+    "scoundrels_kiss": {
+        "num_inherents": 0,
+        "name": "ならず者の接吻"
+    },
+    "scoundrels_leathers": {
+        "num_inherents": 1,
+        "name": "ならず者の革装備"
+    },
+    "seal_of_the_second_trumpet": {
+        "num_inherents": 0,
+        "name": "第二伝令の刻印"
+    },
+    "sepazontec": {
+        "num_inherents": 1,
+        "name": "セパゾンテック"
+    },
+    "shard_of_verathiel": {
+        "num_inherents": 1,
+        "name": "ヴェラティエルの欠片"
+    },
+    "shattered_vow": {
+        "num_inherents": 1,
+        "name": "砕かれし誓い"
+    },
+    "shroud_of_false_death": {
+        "num_inherents": 1,
+        "name": "擬死の衣"
+    },
+    "shroud_of_khanduras": {
+        "num_inherents": 0,
+        "name": "カンデュラスの衣"
+    },
+    "sidhe_bindings": {
+        "num_inherents": 0,
+        "name": "シドヒの拘束"
+    },
+    "skyhunter": {
+        "num_inherents": 1,
+        "name": "スカイハンター"
+    },
+    "soulbrand": {
+        "num_inherents": 0,
+        "name": "ソウルブランド"
+    },
+    "staff_of_endless_rage": {
+        "num_inherents": 1,
+        "name": "終わりなき憤怒の杖"
+    },
+    "staff_of_lam_esen": {
+        "num_inherents": 1,
+        "name": "ラム・エセンの杖"
+    },
+    "starfall_coronet": {
+        "num_inherents": 0,
+        "name": "流星群の小冠"
+    },
+    "stone_of_vehemen": {
+        "num_inherents": 1,
+        "name": "激情の石"
+    },
+    "storms_companion": {
+        "num_inherents": 0,
+        "name": "嵐の旅仲間"
+    },
+    "strike_of_stormhorn": {
+        "num_inherents": 1,
+        "name": "ストームホーンの一撃"
+    },
+    "sunbirds_gorget": {
+        "num_inherents": 0,
+        "name": "太陽鳥の頸甲"
+    },
+    "sunbrand": {
+        "num_inherents": 1,
+        "name": "太陽の焼印"
+    },
+    "sundered_night": {
+        "num_inherents": 2,
+        "name": "隔たれし夜"
+    },
+    "sunstained_war-crozier": {
+        "num_inherents": 1
+    },
+    "supplication": {
+        "num_inherents": 1,
+        "name": "哀願"
+    },
+    "tal_rashas_iridescent_loop": {
+        "num_inherents": 0,
+        "name": "タル・ラシャの虹色の輪"
+    },
+    "tassets_of_the_dawning_sky": {
+        "num_inherents": 0,
+        "name": "暁のタセット"
+    },
+    "temerity": {
+        "num_inherents": 0,
+        "name": "向う見ず"
+    },
+    "tempest_roar": {
+        "num_inherents": 0,
+        "name": "大嵐の咆哮"
+    },
+    "the_basilisk": {
+        "num_inherents": 1,
+        "name": "バシリスク"
+    },
+    "the_butchers_cleaver": {
+        "num_inherents": 1,
+        "name": "ブッチャーのクリーヴァー"
+    },
+    "the_grandfather": {
+        "num_inherents": 2,
+        "name": "グランドファーザー"
+    },
+    "the_hand_of_naz": {
+        "num_inherents": 0,
+        "name": "ナズの手"
+    },
+    "the_mortacrux": {
+        "num_inherents": 2,
+        "name": "モルタクラクス"
+    },
+    "the_oculus": {
+        "num_inherents": 1,
+        "name": "オキュラス"
+    },
+    "the_third_blade": {
+        "num_inherents": 1,
+        "name": "第三の刃"
+    },
+    "the_umbracrux": {
+        "num_inherents": 1,
+        "name": "アンブラクラクス"
+    },
+    "the_unmaker": {
+        "num_inherents": 0,
+        "name": "奪神聖の兜"
+    },
+    "thousand-eye_reaver": {
+        "num_inherents": 1,
+        "name": "千眼の略奪者"
+    },
+    "tibaults_will": {
+        "num_inherents": 0,
+        "name": "ティーボルトの意志"
+    },
+    "tuskhelm_of_joritz_the_mighty": {
+        "num_inherents": 0,
+        "name": "鉄人ジョリッツの牙付き兜"
+    },
+    "twin_strikes": {
+        "num_inherents": 0,
+        "name": "双撃"
+    },
+    "tyraels_might": {
+        "num_inherents": 1,
+        "name": "ティラエルの威力"
+    },
+    "tyraels_shopping_list": {
+        "num_inherents": 1,
+        "name": "ティラエルの買い物リスト"
+    },
+    "ugly_bastard_helm": {
+        "num_inherents": 1,
+        "name": "犬畜生の兜"
+    },
+    "unbroken_chain": {
+        "num_inherents": 0,
+        "name": "不壊の鎖"
+    },
+    "unsung_ascetics_wraps": {
+        "num_inherents": 0,
+        "name": "謳われぬ苦行者の手巻き"
+    },
+    "vasilys_prayer": {
+        "num_inherents": 0,
+        "name": "ヴァシリーの祈り"
+    },
+    "vox_omnium": {
+        "num_inherents": 1,
+        "name": "ヴォクス・オムニウム"
+    },
+    "ward_of_the_white_dove": {
+        "num_inherents": 3,
+        "name": "白鳩の後見者"
+    },
+    "waxing_gibbous": {
+        "num_inherents": 1,
+        "name": "凸月"
+    },
+    "wendigo_brand": {
+        "num_inherents": 0,
+        "name": "ウェンディゴの烙印"
+    },
+    "wildheart_hunger": {
+        "num_inherents": 1,
+        "name": "ワイルドハートの飢え"
+    },
+    "windforce": {
+        "num_inherents": 1,
+        "name": "ウィンドフォース"
+    },
+    "word_of_hakan": {
+        "num_inherents": 0,
+        "name": "ハカンの言葉"
+    },
+    "wound_drinker": {
+        "num_inherents": 0,
+        "name": "傷飲みの輪"
+    },
+    "wreath_of_auric_laurel": {
+        "num_inherents": 0,
+        "name": "黄金の月桂樹のリース"
+    },
+    "writhing_band_of_trickery": {
+        "num_inherents": 0,
+        "name": "悶えし策略の指輪"
+    },
+    "wushe_nak_pa": {
+        "num_inherents": 1,
+        "name": "ウーシー ナク パ"
+    },
+    "wyrdskin": {
+        "num_inherents": 0,
+        "name": "宿命の真皮"
+    },
+    "xfals_corroded_signet": {
+        "num_inherents": 0,
+        "name": "ジファルの腐食した印章指輪"
+    },
+    "yens_blessing": {
+        "num_inherents": 1,
+        "name": "イェンの祝福"
+    },
+    "yens_blessing_(legacy)": {
+        "num_inherents": 1
+    }
+}

@@ -53,7 +53,7 @@ _FOR_SECONDS_RE = re.compile(r"for (?P<forsecondsvalue>\d) Seconds")
 
 _REPLACE_COMPARE_RE = re.compile(r"\(.*\)")
 
-_AFFIX_REPLACEMENTS = ["%", "+", ",", "[+]", "[x]", "per 5 Seconds"]
+_AFFIX_REPLACEMENTS = ["%", "+", ",", "[+]", "[x]", "per 5 Seconds", "秒ごとに"]
 LOGGER = logging.getLogger(__name__)
 
 
@@ -74,13 +74,24 @@ def _get_affix_counts(tts_section: list[str], item: Item, start: int) -> tuple[i
 
     # Rares have either 3 or 4 affixes so we have to do special handling to figure out where exactly the affixes end.
     # This will also grab up slotted gems but we really don't have much choice
+    tooltips = Dataloader().tooltips
+    _affix_end_markers = [
+        "empty socket", "requires level", "properties lost when equipped", "rampage:", "feast:", "hunger:",
+        tooltips.get("EmptySocket", "").lower(),
+        tooltips.get("RequiresLevel", "").lower(),
+        tooltips.get("PropertiesLost", "").lower(),
+        tooltips.get("Rampage", "").lower(),
+        tooltips.get("Feast", "").lower(),
+        tooltips.get("Hunger", "").lower(),
+    ]
     if item.rarity == ItemRarity.Rare and any(
         tts_section[start + inherent_num + affixes_num - 1].lower().startswith(x)
-        for x in ["empty socket", "requires level", "properties lost when equipped", "rampage:", "feast:", "hunger:"]
+        for x in _affix_end_markers if x
     ):
         affixes_num = 3
-    elif item.rarity == ItemRarity.Legendary and tts_section[start + inherent_num + affixes_num - 1].lower().startswith(
-        "imprinted:"
+    elif item.rarity == ItemRarity.Legendary and any(
+        tts_section[start + inherent_num + affixes_num - 1].lower().startswith(x)
+        for x in ["imprinted:", tooltips.get("Imprinted", "").lower()] if x
     ):
         # Additionally, if someone imprinted a 3 affix rare we'd think it was a legendary so we need to catch those here
         affixes_num = 3
@@ -208,12 +219,16 @@ def _add_sigil_affixes_from_tts(tts_section: list[str], item: Item) -> Item:
 
 def _create_base_item_from_tts(tts_item: list[str]) -> Item | None:
     item = Item(original_name=tts_item[0])
+    tooltips = Dataloader().tooltips
+    bloodied_str = tooltips.get("Bloodied", "").lower()
+    ancestral_str = tooltips.get("Ancestral", "").lower()
+
     if tts_item[1].endswith(ItemIdentifiers.COMPASS.value):
         return _update_item_object(item, rarity=ItemRarity.Common, item_type=ItemType.Compass)
     if ItemIdentifiers.NIGHTMARE_SIGIL.value.upper() in tts_item[0].upper():
         if "Nightmare Sigil is used" in tts_item[0]:  # This is actually the crafting screen
             return None
-        if "bloodied" in tts_item[1].lower():
+        if "bloodied" in tts_item[1].lower() or (bloodied_str and bloodied_str in tts_item[1].lower()):
             item.seasonal_attribute = SeasonalAttribute.bloodied
         return _update_item_object(item, rarity=ItemRarity.Common, item_type=ItemType.Sigil)
     if tts_item[0].startswith(ItemIdentifiers.ESCALATION_SIGIL.value):
@@ -221,7 +236,7 @@ def _create_base_item_from_tts(tts_item: list[str]) -> Item | None:
     if ItemIdentifiers.TRIBUTE.value in tts_item[0]:
         item.item_type = ItemType.Tribute
         search_string_split = tts_item[1].split(" ")
-        item.rarity = _get_item_rarity(search_string_split[0])
+        item.rarity, _ = _split_rarity_and_type(search_string_split[0], tooltips)
         item.name = correct_name(" ".join(search_string_split[1:]))
         return item
     if tts_item[0].startswith(ItemIdentifiers.WHISPERING_KEY.value):
@@ -255,32 +270,29 @@ def _create_base_item_from_tts(tts_item: list[str]) -> Item | None:
     elif any(tts_item[1].lower().endswith(x) for x in ["consumable", "scroll"]):
         item.item_type = ItemType.Consumable
     if is_consumable(item.item_type):
-        search_string_split = tts_item[1].split(" ")
-        item.rarity = _get_item_rarity(search_string_split[0])
+        item.rarity, _ = _split_rarity_and_type(tts_item[1].split(" ")[0], tooltips)
         return item
 
-    if "bloodied" in tts_item[1].lower():
+    if "bloodied" in tts_item[1].lower() or (bloodied_str and bloodied_str in tts_item[1].lower()):
         item.seasonal_attribute = SeasonalAttribute.bloodied
 
     # Check lines 3-6 instead of just line 4 (handles variable name lengths and gives us flexibility to search for the sanctified marker)
     if any("sanctified" in tts_item[i].lower() for i in range(3, min(7, len(tts_item)))):
         item.seasonal_attribute = SeasonalAttribute.sanctified
 
-    search_string = tts_item[1].lower().replace("ancestral", "").replace("bloodied", "").strip()
+    search_string = tts_item[1].lower()
+    for strip_word in ["ancestral", "bloodied", ancestral_str, bloodied_str]:
+        if strip_word:
+            search_string = search_string.replace(strip_word, "")
     search_string = _REPLACE_COMPARE_RE.sub("", search_string).strip()
-    search_string_split = search_string.split(" ")
-    item.rarity = _get_item_rarity(search_string_split[0])
-    starting_item_type_index = 1
-    if item.rarity == ItemRarity.Mythic:
-        starting_item_type_index = 2
-    elif item.rarity == ItemRarity.Common:
-        starting_item_type_index = 0
-    item.item_type = _get_item_type(" ".join(search_string_split[starting_item_type_index:]))
+    item.rarity, item_type_str = _split_rarity_and_type(search_string, tooltips)
+    item.item_type = _get_item_type(item_type_str)
     item.name = correct_name(tts_item[0])
     if item.name in Dataloader().bad_tts_uniques:
         item.name = Dataloader().bad_tts_uniques[item.name]
+    item_power_key = tooltips.get("ItemPower", "item power").rstrip(":").lower()
     for line in tts_item:
-        if "item power" in line.lower():
+        if item_power_key in line.lower() or "item power" in line.lower():
             item.power = int(find_number(line))
             break
     return item
@@ -297,13 +309,17 @@ def _update_item_object(item: Item, rarity=None, item_type=None) -> Item:
 
 def _get_affix_starting_location_from_tts_section(tts_section: list[str], item: Item) -> int:
     start = 0
+    tooltips = Dataloader().tooltips
 
     if is_weapon(item.item_type):
-        start = _get_index_of_armor_dps_or_all_resist(tts_section, "damage per second") + 2
+        indicators = list({tooltips.get("DamagePerSecond", "").lower(), "damage per second"} - {""})
+        start = max(_get_index_of_armor_dps_or_all_resist(tts_section, ind) for ind in indicators) + 2
     elif is_jewelry(item.item_type):
-        start = _get_index_of_armor_dps_or_all_resist(tts_section, "all resist")
+        indicators = list({tooltips.get("AllResist", "").lower(), "all resist"} - {""})
+        start = max(_get_index_of_armor_dps_or_all_resist(tts_section, ind) for ind in indicators)
     elif is_armor(item.item_type):
-        start = _get_index_of_armor_dps_or_all_resist(tts_section, "armor")
+        indicators = list({tooltips.get("Armor", "").lower(), "armor"} - {""})
+        start = max(_get_index_of_armor_dps_or_all_resist(tts_section, ind) for ind in indicators)
     start += 1
 
     return start
@@ -369,11 +385,14 @@ def _get_affix_from_text(text: str) -> Affix:
     if matched_groups.get("onlyvalue") is not None:
         result.min_value = float(matched_groups.get("onlyvalue"))
         result.max_value = float(matched_groups.get("onlyvalue"))
-    result.name = rapidfuzz.process.extractOne(
-        keep_letters_and_spaces(_REPLACE_COMPARE_RE.sub("", result.text).strip()),
-        list(Dataloader().affix_dict),
+    query = keep_letters_and_spaces(_REPLACE_COMPARE_RE.sub("", result.text).strip())
+    affix_dict = Dataloader().affix_dict
+    best_value, _, _ = rapidfuzz.process.extractOne(
+        query,
+        list(affix_dict.values()),
         scorer=rapidfuzz.distance.Levenshtein.distance,
-    )[0]
+    )
+    result.name = next(k for k, v in affix_dict.items() if v == best_value)
     return result
 
 
@@ -419,19 +438,61 @@ def _get_item_rarity(data: str) -> ItemRarity | None:
     return next((rar for rar in ItemRarity if rar.value == data.lower()), ItemRarity.Common)
 
 
+def _split_rarity_and_type(search_string: str, tooltips: dict) -> tuple[ItemRarity, str]:
+    """Parse rarity + item-type from a string that may be space-separated (enUS) or concatenated (jaJP)."""
+    # Space-separated: try English-style first
+    parts = search_string.split(" ")
+    rarity = _get_item_rarity(parts[0])
+    if rarity != ItemRarity.Common or parts[0] in ("common", ""):
+        # Determine how many words the rarity occupies
+        starting_item_type_index = 1
+        if rarity == ItemRarity.Mythic:
+            starting_item_type_index = 2
+        elif rarity == ItemRarity.Common:
+            starting_item_type_index = 0
+        return rarity, " ".join(parts[starting_item_type_index:])
+
+    # Prefix matching for languages that concatenate rarity+type (e.g. Japanese)
+    rarity_tooltip_keys = [
+        ("RarityMythic", ItemRarity.Mythic),
+        ("RarityUnique", ItemRarity.Unique),
+        ("RarityLegendary", ItemRarity.Legendary),
+        ("RarityRare", ItemRarity.Rare),
+        ("RarityMagic", ItemRarity.Magic),
+        ("RarityCommon", ItemRarity.Common),
+    ]
+    for key, rar_enum in rarity_tooltip_keys:
+        prefix = tooltips.get(key, "").lower()
+        if prefix and search_string.startswith(prefix):
+            return rar_enum, search_string[len(prefix):]
+
+    return ItemRarity.Common, search_string
+
+
 def _get_item_type(data: str):
     return next((it for it in ItemType if it.value == data.lower()), None)
 
 
 def _is_codex_upgrade(tts_section: list[str]) -> bool:
+    tooltips = Dataloader().tooltips
+    codex1 = tooltips.get("CodexUpgrade1", "").lower()
+    codex2 = tooltips.get("CodexUpgrade2", "").lower()
     return any(
-        "upgrades an aspect in the codex of power" in line.lower() or "unlocks new aspect" in line.lower()
+        "upgrades an aspect in the codex of power" in line.lower()
+        or "unlocks new aspect" in line.lower()
+        or (codex1 and codex1 in line.lower())
+        or (codex2 and codex2 in line.lower())
         for line in tts_section
     )
 
 
 def _is_cosmetic_upgrade(tts_section: list[str]):
-    return any("unlocks new look on salvage" in line.lower() for line in tts_section)
+    tooltips = Dataloader().tooltips
+    cosmetic_str = tooltips.get("CosmeticUpgrade", "").lower()
+    return any(
+        "unlocks new look on salvage" in line.lower() or (cosmetic_str and cosmetic_str in line.lower())
+        for line in tts_section
+    )
 
 
 def read_descr_mixed(img_item_descr: np.ndarray) -> Item | None:

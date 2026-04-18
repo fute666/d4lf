@@ -1,5 +1,7 @@
 """New config loading and verification using pydantic. For now, both will exist in parallel hence _new."""
 
+from __future__ import annotations
+
 import enum
 import logging
 import sys
@@ -461,7 +463,7 @@ class GeneralModel(_IniBaseModel):
 
     @field_validator("language")
     def language_must_exist(cls, v: str) -> str:
-        if v not in ["enUS"]:
+        if v not in ["enUS", "jaJP"]:
             msg = "language not supported"
             raise ValueError(msg)
         return v

@@ -39,7 +39,7 @@ class Publisher:
             data = fix_data(_DATA_QUEUE.get())
             local_cache.append(data)
             if not filter_data(data) and (
-                any(word in data.lower() for word in ["mouse button", "action button"])
+                any(word in data.lower() for word in ["mouse button", "action button", "マウスボタン", "アクションボタン"])
                 and (start := find_item_start(local_cache)) is not None
             ):
                 global LAST_ITEM
@@ -136,6 +136,10 @@ def find_item_start(data: list[str]) -> int | None:
         cleaned_str = re.sub(r"[^A-Za-z]", "", item)
         if len(cleaned_str) >= 3 and item.isupper():
             return index
+
+        # Japanese: "アイテムパワー: NNN" always appears 2 lines after item name
+        if "アイテムパワー" in item:
+            return max(0, index - 2)
 
     return None
 

@@ -40,3 +40,6 @@ venv
 assets/last_update
 .codex
 AGENTS.md
+.claude/
+test_tts_pipe.py
+tts_test_log.txt
